@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">IVIN</string>
+    <string name="title_activity_bmw">BMWActivity</string>
+    <string name="NoBarcode">Barcode Not Found</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="vins_scanned">VINs have been scanned</string>
+    <string-array name="tires">
+        <item>Bridgestone</item>
+        <item>Continental</item>
+        <item>Dunlop</item>
+        <item>Falken</item>
+        <item>Firestone</item>
+        <item>Good Year</item>
+        <item>Hankook</item>
+        <item>Kumho</item>
+        <item>Michelin</item>
+        <item>Nexen</item>
+        <item>Pirelli</item>
+        <item>Toyo</item>
+    </string-array>
+    <string name="sendingMsg">Sending...</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222"
+    tools:context=".VWMenuActivity">
+
+    <ImageView
+        android:id="@+id/vw_image"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/simplevw" />
+
+    <Button
+        android:id="@+id/upfit_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vw_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:onClick="UpfitOnClick"
+        android:text="UPFIT SERVICE (INSERTS)" />
+
+    <Button
+        android:id="@+id/service_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upfit_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="MAINTENANCE SERVICE (30 DAY)"
+        android:onClick="ServiceOnClick"/>
+
+</RelativeLayout>
