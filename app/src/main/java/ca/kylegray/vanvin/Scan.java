@@ -1,6 +1,5 @@
 package ca.kylegray.vanvin;
 
-//class for all Scan Tests
 public class Scan {
     private String job;
     private String vin;
@@ -24,9 +23,7 @@ public class Scan {
     }
 
     // CONSTRUCTOR FOR GENERIC SCANS, REQUIRING VIN AND COMMENT ONLY
-    // Leaves out:
-    // 1) Reading
-    // 2) Tire
+    // Leaves out: Reading & Tire
     public Scan (String job, String vin, String stamp, String comment, String devid){
         this.job = job;
         this.vin = vin;
@@ -37,7 +34,7 @@ public class Scan {
     }
 
 
-    //GETTER METHODS FOR EACH INSTANCE/ATTRIBUTE OF THE CLASS "SCAN"
+    //GETTER METHODS
     public String getJob(){
         return job;
     }
@@ -67,11 +64,4 @@ public class Scan {
     public void setComment(String newComment){ this.comment = newComment; }
     public void setDevid(String newDevid){ this.devid = newDevid; }
 
-
-    /* public String toString() {
-        String result = "";
-        result = getVin() + getStamp()+ getJob() + getReading() + getTire() + getComment();
-        return result;
-        }
-    */
 }

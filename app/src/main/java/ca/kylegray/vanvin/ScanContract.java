@@ -2,7 +2,6 @@ package ca.kylegray.vanvin;
 
 public final class ScanContract {
 
-    //protects against instantiating ScanContract
     private ScanContract(){
     }
 
@@ -16,15 +15,6 @@ public final class ScanContract {
         static final String COLUMN_5_TIRE = "tire";
         static final String COLUMN_6_COMMENT = "comment";
         static final String COLUMN_7_DEVID = "devid";
-        /*public static final String[] COLUMNS = {
-                COLUMN_ID,
-                COLUMN_1_JOB,
-                COLUMN_2_VIN,
-                COLUMN_3_TIMESTAMP,
-                COLUMN_4_READING,
-                COLUMN_5_TIRE,
-                COLUMN_6_COMMENT
-        };*/
 
         public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
