@@ -61,7 +61,8 @@ public class BMWFinalActivity extends AppCompatActivity implements Dialog.Notice
     SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy HH:mm");
     Date date = new Date();
     String stamp = sdf.format(date);
-
+    // should probably wrap this in a function that gets called each time
+    // you scan rather than just the once and all time stamps are the same
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,7 +171,7 @@ public class BMWFinalActivity extends AppCompatActivity implements Dialog.Notice
         mCursor.close();
     }
 
-    // DIALOG FOR VIN 17 CHECK
+    // DIALOG FOR VIN LENGTH VALIDATION CHECK
     public void lengthDialog(){
         Dialog dialog = new Dialog();
         dialog.show(getSupportFragmentManager(), "Dialog");
@@ -190,7 +191,7 @@ public class BMWFinalActivity extends AppCompatActivity implements Dialog.Notice
         EditText ReadingInput = findViewById(R.id.text_reading);
         TextResult.setText("");
         BarcodeResult.getText().clear();
-        ReadingInput.setText("12.");
+        ReadingInput.setText("");
         Switch SwitchKeep = findViewById(R.id.generic_keep_switch);
         if (!SwitchKeep.isChecked()) { CommentInput.getText().clear(); }
         Log.d(TAG, "Fields cleared");
@@ -204,7 +205,7 @@ public class BMWFinalActivity extends AppCompatActivity implements Dialog.Notice
         String comment = commentInput.getText().toString();
         String job = "final";
         dbHelper dbh = new dbHelper(this);
-        // IF STATEMENT FOR VALIDATING VIN LENGTH
+        // VALIDATING VIN LENGTH
         if (vin.length() != 17) {
             lengthDialog();
         }else{
@@ -252,22 +253,11 @@ public class BMWFinalActivity extends AppCompatActivity implements Dialog.Notice
 
                 mCursor.moveToNext();
             }
-//                try{
-//                    json.put("json",jsonArray);
-//                } catch (JSONException e) {
-//                    Log.d(TAG,"Exception" + e);
-//                }
-            //bgTask.doInBackground(jsonArray);// use background method to send json to server
-            //Log.d(TAG, "json array to string:" + jsonArray.toString());
-            //Log.d(TAG, "json creator log: " + json);
             mCursor.close();
             Log.d(TAG, "JSON STRING:  " + jsonArray.toString());
         }return jsonArray;
 
     }
-
-
-
 
     // JSON/ASYNC TASK DOES ALL THE BACKGROUND NETWORK STUFF??
     public class JSONTask extends AsyncTask<JSONArray, Integer, String> {
